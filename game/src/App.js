@@ -3,16 +3,14 @@ import { TicTacToe } from './game';
 import { TicTacToeBoard } from './board';
 import React from 'react';
 
-// TODO: this breaks, use create-react-app proxy
-const host = '192.168.43.178:8000';
-
 const TicTacToeClient = Client({ 
   game: TicTacToe,
   board: TicTacToeBoard,
-  multiplayer: { server : host },
+  multiplayer: { server : window.location.origin },
 });
 
-const gameId = "a";
+// TODO: change this with a sort of new-game UI
+const gameId = window.location.search;
 
 const App = () => (
   <div>
